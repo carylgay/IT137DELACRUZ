@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+* {box-sizing: border-box}
+body {
+  background-color: rgb(193, 130, 223);
+}
+.container {
+  font-family: "Lucida Console", serif;
+  padding: 18px;
+  max-width: 600px;
+  padding: 40px 40px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 15px 30px;
+  margin: 0 auto 25px;
+  margin-top: 100px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+h1 {
+    text-align: center;
+    font-family: "Lucida Console", serif;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0 18px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  height: 45px;
+  font-family: "Lucida Console", serif;
+  font-size: 16px;
+  font-style: italic;
+  direction: ltr;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  font-family: "Lucida Console", serif;
+  background-color: rgb(145, 70, 180);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+a {
+  color: rgb(157, 96, 214);
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+    <form action="action_page.php">
+        <div class="container">
+            <h1>Register</h1>
+            <p>Please fill in this form to create an account.</p>
+
+            <hr>
+      
+            <label for="last-name"><b>Last Name</b></label>
+                <input type="text" placeholder="Enter Last Name" name="last-name" id="last-name" required>
+            <label for="first-name"><b>First Name</b></label>
+                <input type="text" placeholder="Enter First Name" name="first-name" id="first-name" required>
+            <label for="email"><b>Username</b></label>
+                <input type="text" placeholder="Username" name="email" id="email" required>
+      
+            <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="myInput" required>
+            <label for="psw-repeat"><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="psw-repeat" id="myInput" required>
+                <input type="checkbox" onclick="myFunction()">Show Password
+
+            <hr>
+      
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            
+              <button type="submit" class="registerbtn" onclick="buttonFunction()"> Register </button>
+            <p id="demo"></p>
+        </div>
+      
+        <div class="container signin">
+            <p>Already have an account? <a href="log-in form.html">Sign in</a>.</p>
+        </div>
+      </form>
+
+      <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+            x.type = "text";
+            } 
+            else {
+            x.type = "password";
+            }
+
+        }
+        function buttonFunction(){
+          var txt;
+          if (confirm("Do you want to proceed?")) {
+            txt = "You pressed OK!";
+          }
+          else {
+            txt = "You pressed Cancel!";
+          }
+          document.getElementById("demo").innerHTML = txt;
+        }
+      </script>
+
+</body>
+</html>
+
